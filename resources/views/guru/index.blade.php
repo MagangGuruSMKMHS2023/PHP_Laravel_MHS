@@ -1,3 +1,4 @@
+
 <a href="/guru/create">Tambah</a>
 <table border="1">
     <tr>
@@ -15,3 +16,4 @@
     </tr>
     <?php endforeach; ?>
 </table>
+
