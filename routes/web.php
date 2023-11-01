@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/kelas', [KelasController::class, "index"]);
-    Route::get('/kelas/create', [KelasController::class, "create"]);
+
 
 });
