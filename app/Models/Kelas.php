@@ -16,6 +16,6 @@ class Kelas extends Model
         'walikelas',
         'ketuakelas',
         'kursi',
-        'merja',
+        'meja',
     ];
 }
