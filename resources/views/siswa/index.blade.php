@@ -1,21 +1,39 @@
-<a href="/siswa/create">Tambah</a>
-<table border="1">
-    <tr>
-        <td>Id Siswa</td>
-        <td>Nama Siswa</td>
-        <td>Alamat </td>
-        <td>Jenis Kelamin </td>
-        <td>Kelas</td>
-    </tr>
-    <?php foreach($siswa as $row) : ?>
-    <tr>
-        <td><?= $row['id']; ?></td>
-        <td><?= $row['namasiswa']; ?></td>
-        <td><?= $row['alamat']; ?></td>
-        <td><?= $row['jeniskelamin']; ?></td>
-        <td><?= $row['kelas']; ?></td>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru</title>
+    @include('css')
+</head>
+<body>
+@include('navbar')
 
-        
-    </tr>
-    <?php endforeach; ?>
-</table>
+
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48">
+                <a href="/siswa/create">Tambah</a>
+        </button>
+
+        <div class="flex justify-center mt-4">
+            <table class="table-auto border-collapse border border-slate-300 w-9/12">
+                <tr class="bg-indigo-400 text-white">
+                    <td class="p-4">Id Siswa</td>
+                    <td class="p-4">Nama Siswa</td>
+                    <td class="p-4">Alamat </td>
+                    <td class="p-4">Jenis Kelamin </td>
+                    <td class="p-4">Kelas</td>
+                </tr>
+                <?php foreach($siswa as $row) : ?>
+                <tr class="even:bg-slate-300 odd:bg-slate-100">
+                    <td class="p-4"><?= $row['id']; ?></td>
+                    <td class="p-4"><?= $row['namasiswa']; ?></td>
+                    <td class="p-4"><?= $row['alamat']; ?></td>
+                    <td class="p-4"><?= $row['jeniskelamin']; ?></td>
+                    <td class="p-4"><?= $row['kelas']; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+
+
+
