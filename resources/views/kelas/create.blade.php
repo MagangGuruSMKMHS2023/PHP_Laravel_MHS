@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Data Tambah Guru</title>
+    <title>Test Data Tambah Kelas</title>
 </head>
 <body>
-    <h1>Test Data Tambah Guru</h1>
+    <h1>Test Data Tambah Kelas</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -12,7 +12,7 @@
                 <div class="panel-heading">Tambah Kelas</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="/kelas/create">
+                    <form class="form-horizontal" method="POST" action="/kelas/store">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -48,10 +48,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="merja" class="col-md-4 control-label">Merkas</label>
+                            <label for="meja" class="col-md-4 control-label">Jumlah Meja</label>
 
                             <div class="col-md-6">
-                                <input id="merja" type="text" class="form-control" name="merja" required>
+                                <input id="meja" type="text" class="form-control" name="meja" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gambar_kelas" class="col-md-4 control-label">Gambar</label>
+
+                            <div class="col-md-6">
+                                <input type="file" name="gambar_kelas" class="form-control" accept="image/*" id="" required>
                             </div>
                         </div>
 

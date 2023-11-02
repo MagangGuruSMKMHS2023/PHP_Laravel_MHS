@@ -21,9 +21,19 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/kelas', [KelasController::class, "index"]);
+    //get indexes
+    Route::get('/kelas', [KelasController::class, "index"])->name('kelas.index');
     Route::get('/guru', [GuruController::class, "index"]);
     Route::get('/siswa', [SiswaController::class, "index"]);
+
+
+    //route ke form tambah 
+    Route::get('/kelas/create',[KelasController::class, "create"]);
+
+
+    //route untuk aksi simpan data ke dalam database
+    Route::post('/kelas/store',[KelasController::class, "store"]);
+
 
 
 

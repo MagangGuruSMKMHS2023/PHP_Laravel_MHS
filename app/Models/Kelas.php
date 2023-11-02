@@ -17,5 +17,8 @@ class Kelas extends Model
         'ketuakelas',
         'kursi',
         'meja',
+        'gambar_kelas',
+        'updated_at',
+        'created_at'
     ];
 }

@@ -32,11 +32,25 @@ class KelasController extends Controller
             'walikelas' => 'required',
             'ketuakelas' => 'required',
             'kursi' => 'required',
-            'merja' => 'required',
+            'meja' => 'required',
+            'gambar_kelas' => 'required|image|mimes:jpeg,png,jpg'
         ]);
 
-        $this->kelas->create($request->all());
+        $gambar_kelas = $request->file('gambar_kelas');
+        $gambar_kelas_name = time(). '.' . $gambar_kelas->getClientOriginalExtension();
+        $gambar_kelas->move(public_path('upload_gambar'), $gambar_kelas_name);
 
-        return redirect()->route('kelas.create')->with('success', 'Data kelas berhasil disimpan');
+        // $this->kelas->create($request->all());
+
+        Kelas::create([
+            'namakelas' => $request->input('namakelas'),
+            'walikelas' => $request->input('walikelas'),
+            'ketuakelas' => $request->input('ketuakelas'),
+            'kursi' => $request->input('kursi'),
+            'meja' => $request->input('meja'),
+            'gambar_kelas' => $gambar_kelas_name,
+        ]);
+
+        return redirect('/kelas')->with('success', 'Data kelas berhasil disimpan');
     }
 }

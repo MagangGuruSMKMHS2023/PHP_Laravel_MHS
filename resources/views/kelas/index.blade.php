@@ -23,6 +23,7 @@
                     <td class="p-4">Ketua Kelas</td>
                     <td class="p-4">Kursi</td>
                     <td class="p-4">Meja</td>
+                    <td class="p-4">Gambar</td>
                 </tr>
                 <?php foreach($kelas as $gr) : ?>
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
@@ -32,7 +33,13 @@
                     <td class="p-4"><?php echo $gr['ketuakelas']; ?></td>
                     <td class="p-4"><?php echo $gr['kursi']; ?></td>
                     <td class="p-4"><?php echo $gr['meja']; ?></td>
+                    <td class="p-4">
+                        <a href="{{ asset('upload_gambar/' . $gr->gambar_kelas) }}" target="_blank">
+                            <img src="{{ asset('upload_gambar/' . $gr->gambar_kelas) }}" alt="{{ $gr->namakelas }}" width="100" height="100">
+                        </a>
+                    </td>
                 </tr>
+                
                 <?php endforeach; ?>
             </table>
         </div>
