@@ -4,55 +4,65 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Siswa;
+use App\Models\Kelas;
 
 class SiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+   
 
     protected $siswa;
+    protected $kelas;
+
     
-    public function __construct(Siswa $siswa){
+    public function __construct(Siswa $siswa , Kelas $kelas){
         $this->siswa = $siswa;
+        $this->kelas = $kelas;
     }
 
     public function index()
     {
-        //
+        
         $siswa = $this->siswa->all();
         return view('siswa.index',compact('siswa'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'namasiswa' => 'required',
+            'alamat' => 'required',
+            'jeniskelamin' => 'required',
+            'kelas' => 'required',
+
+        ]);
+
+        $this->siswa->create($request->all());
+        return redirect('/siswa')->with('success', 'Data kelas berhasil disimpan');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
+       
+    public function create()
+    {
+        $kelas = $this->kelas->all();
+        return view('siswa.create', compact('kelas'));
+    }
+
+   
     public function show(string $id)
     {
-        //
+        
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+   
     public function update(Request $request, string $id)
     {
-        //
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(string $id)
     {
-        //
+        
     }
 }

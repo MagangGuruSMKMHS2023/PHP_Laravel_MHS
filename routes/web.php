@@ -29,10 +29,18 @@ Route::group(['middleware' => ['web']], function () {
 
     //route ke form tambah 
     Route::get('/kelas/create',[KelasController::class, "create"]);
+    Route::get('/guru/create',[GuruController::class, "create"]);
+    Route::get('/siswa/create',[SiswaController::class, "create"]);
+
+
 
 
     //route untuk aksi simpan data ke dalam database
     Route::post('/kelas/store',[KelasController::class, "store"]);
+    Route::post('/guru/store',[GuruController::class, "store"]);
+    Route::post('/siswa/store',[SiswaController::class, "store"]);
+
+
 
 
 

@@ -24,17 +24,30 @@ class GuruController extends Controller
         return view('guru.index',compact('guru'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
+
+    
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'namaguru' => 'required',
+            'alamat' => 'required',
+            'jeniskelamin' => 'required',
+        ]);
+
+        $this->guru->create($request->all());
+        return redirect('/guru')->with('success', 'Data kelas berhasil disimpan');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
+    public function create()
+    {
+        return view('guru.create');
+    }
+
+  
     public function show(string $id)
     {
         //
