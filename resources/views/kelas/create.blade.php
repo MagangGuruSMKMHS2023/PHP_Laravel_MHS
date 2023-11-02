@@ -3,78 +3,90 @@
 <head>
     <title>Test Data Tambah Kelas</title>
 </head>
+@include('css')
 <body>
-    <h1>Test Data Tambah Kelas</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Tambah Kelas</div>
+    @include('navbar')
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="/kelas/store">
-                        {{ csrf_field() }}
-
-                        <div class="form-group">
-                            <label for="namakelas" class="col-md-4 control-label">Nama Kelas</label>
-
-                            <div class="col-md-6">
-                                <input id="namakelas" type="text" class="form-control" name="namakelas" required autofocus>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="walikelas" class="col-md-4 control-label">Wali Kelas</label>
-
-                            <div class="col-md-6">
-                                <input id="walikelas" type="text" class="form-control" name="walikelas" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ketuakelas" class="col-md-4 control-label">Ketua Kelas</label>
-
-                            <div class="col-md-6">
-                                <input id="ketuakelas" type="text" class="form-control" name="ketuakelas" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="kursi" class="col-md-4 control-label">Jumlah Kursi</label>
-
-                            <div class="col-md-6">
-                                <input id="kursi" type="number" class="form-control" name="kursi" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="meja" class="col-md-4 control-label">Jumlah Meja</label>
-
-                            <div class="col-md-6">
-                                <input id="meja" type="text" class="form-control" name="meja" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="gambar_kelas" class="col-md-4 control-label">Gambar</label>
-
-                            <div class="col-md-6">
-                                <input type="file" name="gambar_kelas" class="form-control" accept="image/*" id="" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Simpan
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+  <div class="mx-96 mt-8">
+<form class="w-full max-w-sm" method="post" action="/kelas/store" enctype="multipart/form-data">
+    @csrf
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        Nama Kelas
+      </label>
     </div>
+    <div class="md:w-2/3">
+      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
+       name="namakelas" required>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        Wali Kelas
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
+       name="walikelas" required>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        Ketua Kelas
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
+       name="ketuakelas" required>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        Kursi
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
+       name="kursi" required>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        Meja
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
+       name="meja" required>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        Gambar Kelas
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="file"
+       name="gambar_kelas" required>
+    </div>
+  </div>
+  
+  <div class="md:flex md:items-center">
+    <div class="md:w-1/3"></div>
+    <div class="md:w-2/3">
+      <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+        Simpan
+      </button>
+    </div>
+  </div>
+</form>
 </div>
+
 </body>
 </html>
