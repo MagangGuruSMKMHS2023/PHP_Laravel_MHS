@@ -97,6 +97,14 @@ class KelasController extends Controller
         
     }
 
+    public function cari(Request $request){
+        $search = $request->input('cari');
+        $kelas = Kelas::where('id_kelas','LIKE',"%$search%")
+                        ->orWhere('namakelas','LIKE',"%$search%")
+                        ->get();
+       return view('kelas.index', compact('kelas'));                 
+    }
+
 
 
 }

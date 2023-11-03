@@ -93,4 +93,12 @@ class SiswaController extends Controller
         $siswa->delete();
         return redirect("/siswa");   
     }
+
+    public function cari(Request $request){
+        $search = $request->input('cari');
+        $siswa = Siswa::where('kelas','LIKE',"%$search%")
+                        ->orWhere('namasiswa','LIKE',"%$search%")
+                        ->get();
+       return view('siswa.index', compact('siswa'));                 
+    }
 }

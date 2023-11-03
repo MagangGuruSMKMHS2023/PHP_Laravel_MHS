@@ -61,6 +61,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('/guru/{guru}',[GuruController::class, "delete"]);
     Route::delete('/siswa/{siswa}',[SiswaController::class, "delete"]);
 
+    //Route untuk Searching Data
+    Route::get('/carikelas', [KelasController::class, "cari"]);
+    Route::get('/cariguru', [GuruController::class, "cari"]);
+    Route::get('/carisiswa', [SiswaController::class, "cari"]);
+
 
 
 

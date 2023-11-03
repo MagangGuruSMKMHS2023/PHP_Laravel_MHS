@@ -82,4 +82,12 @@ class GuruController extends Controller
         $guru->delete();
         return redirect("/guru");
     }
+
+    public function cari(Request $request){
+        $search = $request->input('cari');
+        $guru = Guru::where('id','LIKE',"%$search%")
+                        ->orWhere('namaguru','LIKE',"%$search%")
+                        ->get();
+       return view('guru.index', compact('guru'));                 
+    }
 }
