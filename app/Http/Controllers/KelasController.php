@@ -53,4 +53,50 @@ class KelasController extends Controller
 
         return redirect('/kelas')->with('success', 'Data kelas berhasil disimpan');
     }
+
+    public function edit($id)
+    {
+        $kelas = $this->kelas->find($id);
+        return view('kelas.edit', compact('kelas'));
+    }
+
+    public function update(Request $request , $id){
+        $kelas = Kelas::find($id);
+
+        $this->validate($request, [
+            'namakelas' => 'required',
+            'walikelas' => 'required',
+            'ketuakelas' => 'required',
+            'kursi' => 'required',
+            'meja' => 'required',
+            'gambar_kelas' => 'image|mimes:jpeg,png,jpg'
+        ]);
+
+        if($request->hasFile('gambar_kelas')){
+            $gambar_kelas = $request->file('gambar_kelas');
+            $gambar_kelas_name = time(). '.' . $gambar_kelas->getClientOriginalExtension();
+            $gambar_kelas->move(public_path('upload_gambar'), $gambar_kelas_name); 
+            $kelas->gambar_kelas = $gambar_kelas_name;
+        }
+
+            $kelas->namakelas = $request->input('namakelas');
+            $kelas->walikelas = $request->input('walikelas');
+            $kelas-> ketuakelas = $request->input('ketuakelas');
+            $kelas->kursi = $request->input('kursi');
+            $kelas-> meja = $request->input('meja');
+
+            $kelas->save();
+            return redirect("/kelas");
+
+    }
+
+    public function delete($id){
+        $kelas = Kelas::find($id);
+        $kelas->delete();
+        return redirect("/kelas");
+        
+    }
+
+
+
 }

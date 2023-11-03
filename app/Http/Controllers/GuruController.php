@@ -37,7 +37,7 @@ class GuruController extends Controller
         ]);
 
         $this->guru->create($request->all());
-        return redirect('/guru')->with('success', 'Data kelas berhasil disimpan');
+        return redirect('/guru')->with('success', 'Data Guru berhasil disimpan');
 
     }
 
@@ -47,25 +47,39 @@ class GuruController extends Controller
         return view('guru.create');
     }
 
-  
-    public function show(string $id)
+    public function edit($id)
     {
-        //
+        $guru = $this->guru->find($id);
+        return view('guru.edit', compact('guru'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+
+    public function update(Request $request, $id)
     {
-        //
+        $guru = Guru::find($id);
+
+        $this->validate($request, [
+            'namaguru' => 'required',
+            'alamat' => 'required',
+            'jeniskelamin' => 'required',
+           
+        ]);
+
+       
+            $guru->namaguru = $request->input('namaguru');
+            $guru->alamat = $request->input('alamat');
+            $guru-> jeniskelamin = $request->input('jeniskelamin');
+        
+
+            $guru->save();
+            return redirect("/guru"); 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+   
+    public function delete($id)
     {
-        //
+        $guru = Guru::find($id);
+        $guru->delete();
+        return redirect("/guru");
     }
 }

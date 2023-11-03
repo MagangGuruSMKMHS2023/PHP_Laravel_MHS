@@ -24,6 +24,7 @@
                     <td class="p-4">Kursi</td>
                     <td class="p-4">Meja</td>
                     <td class="p-4">Gambar</td>
+                    <td class="p-4">Aksi</td>
                 </tr>
                 <?php foreach($kelas as $gr) : ?>
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
@@ -37,6 +38,16 @@
                         <a href="{{ asset('upload_gambar/' . $gr->gambar_kelas) }}" target="_blank">
                             <img src="{{ asset('upload_gambar/' . $gr->gambar_kelas) }}" alt="{{ $gr->namakelas }}" width="100" height="100">
                         </a>
+                    </td>
+                    <td class="p-4">
+                        <a href="/kelas/<?= $gr['id_kelas'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
+                        <form action="/kelas/<?= $gr['id_kelas']?>" method="post">
+                           @csrf 
+                           @method("delete")
+                            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-3" type="submit">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 
