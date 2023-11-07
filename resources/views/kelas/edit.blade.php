@@ -40,8 +40,14 @@
       </label>
     </div>
     <div class="md:w-2/3">
-      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
-       name="walikelas" value="{{ $kelas->walikelas }}" required>
+    <select class="bg-gray-200 border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
+       name="walikelas" required>
+       <?php foreach ($guru as $row) : 
+       ?>
+        <option value="<?= $row['namaguru'] ?>" <?php if($kelas->walikelas ==  $row['namaguru'] ) echo 'selected = "selected"';?>><b><?= $row['namaguru'] ?></b></option>
+
+        <?php endforeach; ?>
+      </select>
     </div>
   </div>
   <div class="md:flex md:items-center mb-6">

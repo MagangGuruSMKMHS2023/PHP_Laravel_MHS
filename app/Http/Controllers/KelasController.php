@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\Guru;
 
 class KelasController extends Controller
 {
     protected $kelas;
+    protected $guru;
 
-    public function __construct(Kelas $kelas)
+
+    public function __construct(Kelas $kelas, Guru $guru)
     {
         $this->kelas = $kelas;
+        $this->guru = $guru;
+
     }
 
     public function index()
@@ -22,7 +27,8 @@ class KelasController extends Controller
 
     public function create()
     {
-        return view('kelas.create');
+        $guru = $this->guru->all();
+        return view('kelas.create',compact('guru'));
     }
 
     public function store(Request $request)
@@ -57,7 +63,9 @@ class KelasController extends Controller
     public function edit($id)
     {
         $kelas = $this->kelas->find($id);
-        return view('kelas.edit', compact('kelas'));
+        $guru = $this->guru->all();
+
+        return view('kelas.edit', compact('kelas','guru'));
     }
 
     public function update(Request $request , $id){
