@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah Siswa</title>
+    <title>Edit Siswa</title>
 </head>
 @include('css')
 <body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Data Tambah Kelas</title>
+    <title>Edit Nilai</title>
 </head>
 @include('css')
 <body>
