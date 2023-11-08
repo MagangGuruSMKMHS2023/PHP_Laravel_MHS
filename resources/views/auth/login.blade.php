@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah Guru</title>
+    <title>Login</title>
 </head>
 @include('css')
 <body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah Nilai</title>
+    <title>Tambah Mapel</title>
 </head>
 @include('css')
 <body>
