@@ -6,6 +6,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\UserController;
+
 
 
 
@@ -42,6 +44,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/nilai', [NilaiController::class, "index"]);
     Route::get('/mapel', [MapelController::class, "index"]);
     Route::get('/jadwal', [JadwalController::class, "index"]);
+    Route::get('/user', [UserController::class, "index"]);
+
 
 
 
@@ -54,6 +58,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/nilai/create',[NilaiController::class, "create"]);
     Route::get('/mapel/create',[MapelController::class, "create"]);
     Route::get('/jadwal/create',[JadwalController::class, "create"]);
+    Route::get('/user/create',[UserController::class, "create"]);
+
 
 
 
@@ -68,6 +74,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/nilai/store',[NilaiController::class, "store"]);
     Route::post('/mapel/store',[MapelController::class, "store"]);
     Route::post('/jadwal/store',[JadwalController::class, "store"]);
+    Route::post('/user/store',[UserController::class, "store"]);
+
 
 
 
@@ -80,6 +88,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/nilai/{nilai}/edit/',[NilaiController::class,"edit"]);
     Route::get('/mapel/{mapel}/edit/',[MapelController::class,"edit"]);
     Route::get('/jadwal/{jadwal}/edit/',[JadwalController::class,"edit"]);
+    Route::get('/user/{user}/edit/',[UserController::class,"edit"]);
+
 
 
 
@@ -93,6 +103,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::put('/nilai/{nilai}',[NilaiController::class, "update"]);
     Route::put('/mapel/{mapel}',[MapelController::class, "update"]);
     Route::put('/jadwal/{jadwal}',[JadwalController::class, "update"]);
+    Route::put('/user/{user}',[UserController::class, "update"]);
+
 
 
 
@@ -107,6 +119,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('/nilai/{nilai}',[NilaiController::class, "delete"]);
     Route::delete('/mapel/{mapel}',[MapelController::class, "delete"]);
     Route::delete('/jadwal/{jadwal}',[JadwalController::class, "delete"]);
+    Route::delete('/user/{user}',[UserController::class, "delete"]);
+
 
 
 
