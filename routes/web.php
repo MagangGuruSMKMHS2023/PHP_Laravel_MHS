@@ -4,6 +4,8 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\MapelController;
+
 
 
 
@@ -36,6 +38,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/guru', [GuruController::class, "index"]);
     Route::get('/siswa', [SiswaController::class, "index"]);
     Route::get('/nilai', [NilaiController::class, "index"]);
+    Route::get('/mapel', [MapelController::class, "index"]);
+
 
 
 
@@ -44,6 +48,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/guru/create',[GuruController::class, "create"]);
     Route::get('/siswa/create',[SiswaController::class, "create"]);
     Route::get('/nilai/create',[NilaiController::class, "create"]);
+    Route::get('/mapel/create',[MapelController::class, "create"]);
+
 
 
 
@@ -54,6 +60,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/guru/store',[GuruController::class, "store"]);
     Route::post('/siswa/store',[SiswaController::class, "store"]);
     Route::post('/nilai/store',[NilaiController::class, "store"]);
+    Route::post('/mapel/store',[MapelController::class, "store"]);
+
 
 
 
@@ -62,6 +70,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/guru/{guru}/edit/',[GuruController::class,"edit"]);
     Route::get('/siswa/{siswa}/edit/',[SiswaController::class,"edit"]);
     Route::get('/nilai/{nilai}/edit/',[NilaiController::class,"edit"]);
+    Route::get('/mapel/{mapel}/edit/',[MapelController::class,"edit"]);
+
 
 
 
@@ -71,6 +81,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::put('/guru/{guru}',[GuruController::class, "update"]);
     Route::put('/siswa/{siswa}',[SiswaController::class, "update"]);
     Route::put('/nilai/{nilai}',[NilaiController::class, "update"]);
+    Route::put('/mapel/{mapel}',[MapelController::class, "update"]);
+
 
 
 
@@ -81,6 +93,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('/guru/{guru}',[GuruController::class, "delete"]);
     Route::delete('/siswa/{siswa}',[SiswaController::class, "delete"]);
     Route::delete('/nilai/{nilai}',[NilaiController::class, "delete"]);
+    Route::delete('/mapel/{mapel}',[MapelController::class, "delete"]);
+
 
 
     //Route untuk Searching Data
