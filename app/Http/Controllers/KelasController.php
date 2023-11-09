@@ -21,7 +21,9 @@ class KelasController extends Controller
 
     public function index()
     {
-        $kelas = $this->kelas->all();
+        $kelas = Kelas::join('guru', 'kelas.id_guru', '=', 'guru.id_guru')
+        ->select('kelas.*', 'guru.*')
+        ->get();
         return view('kelas.index', compact('kelas'));
     }
 
@@ -35,8 +37,7 @@ class KelasController extends Controller
     {
         $this->validate($request, [
             'namakelas' => 'required',
-            'walikelas' => 'required',
-            'ketuakelas' => 'required',
+            'id_guru' => 'required',
             'kursi' => 'required',
             'meja' => 'required',
             'gambar_kelas' => 'required|image|mimes:jpeg,png,jpg'
@@ -50,8 +51,7 @@ class KelasController extends Controller
 
         Kelas::create([
             'namakelas' => $request->input('namakelas'),
-            'walikelas' => $request->input('walikelas'),
-            'ketuakelas' => $request->input('ketuakelas'),
+            'id_guru' => $request->input('id_guru'),
             'kursi' => $request->input('kursi'),
             'meja' => $request->input('meja'),
             'gambar_kelas' => $gambar_kelas_name,
@@ -73,8 +73,7 @@ class KelasController extends Controller
 
         $this->validate($request, [
             'namakelas' => 'required',
-            'walikelas' => 'required',
-            'ketuakelas' => 'required',
+            'id_guru' => 'required',
             'kursi' => 'required',
             'meja' => 'required',
             'gambar_kelas' => 'image|mimes:jpeg,png,jpg'
@@ -88,8 +87,7 @@ class KelasController extends Controller
         }
 
             $kelas->namakelas = $request->input('namakelas');
-            $kelas->walikelas = $request->input('walikelas');
-            $kelas-> ketuakelas = $request->input('ketuakelas');
+            $kelas->id_guru = $request->input('id_guru');
             $kelas->kursi = $request->input('kursi');
             $kelas-> meja = $request->input('meja');
 

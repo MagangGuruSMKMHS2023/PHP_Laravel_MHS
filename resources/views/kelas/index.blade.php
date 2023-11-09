@@ -32,7 +32,6 @@
                     <td class="p-4">Id Kelas</td>
                     <td class="p-4">Nama Kelas</td>
                     <td class="p-4">Wali Kelas</td>
-                    <td class="p-4">Ketua Kelas</td>
                     <td class="p-4">Kursi</td>
                     <td class="p-4">Meja</td>
                     <td class="p-4">Gambar</td>
@@ -42,8 +41,7 @@
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
                     <td class="p-4"><?php echo $gr['id_kelas']; ?></td>
                     <td class="p-4"><?php echo $gr['namakelas']; ?></td>
-                    <td class="p-4"><?php echo $gr['walikelas']; ?></td>
-                    <td class="p-4"><?php echo $gr['ketuakelas']; ?></td>
+                    <td class="p-4"><?php echo $gr['namaguru']; ?></td>
                     <td class="p-4"><?php echo $gr['kursi']; ?></td>
                     <td class="p-4"><?php echo $gr['meja']; ?></td>
                     <td class="p-4">

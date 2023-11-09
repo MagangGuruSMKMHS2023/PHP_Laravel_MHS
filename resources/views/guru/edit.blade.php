@@ -8,7 +8,7 @@
     @include('navbar')
 
   <div class="mx-96 mt-8">
-<form class="w-full max-w-sm" method="post" action="/guru/{{$guru->id}}" enctype="multipart/form-data">
+<form class="w-full max-w-sm" method="post" action="/guru/{{$guru->id_guru}}" enctype="multipart/form-data">
 @method("put")  
 @csrf
  <div class="md:flex md:items-center mb-6">
@@ -19,7 +19,7 @@
     </div>
     <div class="md:w-2/3">
       <input class="bg-gray-200 appearance-none border-2 border-red-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
-       name="idguru" value="{{ $guru->id}}" readonly>
+       name="idguru" value="{{ $guru->id_guru}}" readonly>
     </div>
   </div>  
   <div class="md:flex md:items-center mb-6">

@@ -37,13 +37,13 @@
                 </tr>
                 <?php foreach($guru as $row) : ?>
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
-                    <td class="p-4"><?= $row['id']; ?></td>
+                    <td class="p-4"><?= $row['id_guru']; ?></td>
                     <td class="p-4"><?= $row['namaguru']; ?></td>
                     <td class="p-4"><?= $row['alamat']; ?></td>
                     <td class="p-4"><?= $row['jeniskelamin']; ?></td>
                     <td class="p-4">
-                        <a href="/guru/<?= $row['id'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
-                        <form action="/guru/<?= $row['id']?>" method="post">
+                        <a href="/guru/<?= $row['id_guru'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
+                        <form action="/guru/<?= $row['id_guru']?>" method="post">
                            @csrf 
                            @method("delete")
                             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-3" type="submit">
