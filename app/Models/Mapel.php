@@ -13,7 +13,7 @@ class Mapel extends Model
     protected $fillable = [
         'id_mapel',
         'namamapel',
-        'guru',
+        'id_guru',
         'updated_at',
         'created_at'
     ];

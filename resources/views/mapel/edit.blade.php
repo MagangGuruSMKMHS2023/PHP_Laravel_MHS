@@ -30,10 +30,10 @@
     </div>
     <div class="md:w-2/3">
     <select class="bg-gray-200 border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
-       name="guru" required>
+       name="id_guru" required>
        <?php foreach ($guru as $row) : 
        ?>
-        <option value="<?= $row['namaguru'] ?>" <?php if($mapel->guru ==  $row['namaguru'] ) echo 'selected = "selected"';?>><b><?= $row['namaguru'] ?></b></option>
+        <option value="<?= $row['id_guru'] ?>" <?php if($mapel->guru ==  $row['id_guru'] ) echo 'selected = "selected"';?>><b><?= $row['namaguru'] ?></b></option>
 
         <?php endforeach; ?>
       </select>

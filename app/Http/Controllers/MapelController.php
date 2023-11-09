@@ -19,7 +19,9 @@ class MapelController extends Controller
 
    public function index()
    {
-       $mapel = $this->mapel->all();
+       $mapel = Mapel::join('guru', 'mapel.id_guru', '=', 'guru.id_guru')
+       ->select('mapel.*', 'guru.*')
+       ->get();
        return view('mapel.index', compact('mapel'));
    }
 
@@ -34,12 +36,12 @@ class MapelController extends Controller
    {
        $this->validate($request, [
            'namamapel' => 'required',
-           'guru' => 'required',  
+           'id_guru' => 'required',  
        ]);
 
        Mapel::create([
            'namamapel' => $request->input('namamapel'),
-           'guru' => $request->input('guru'),
+           'id_guru' => $request->input('id_guru'),
        ]);
 
        return redirect('/mapel')->with('success', 'Data Mapel berhasil disimpan');
@@ -58,12 +60,12 @@ class MapelController extends Controller
 
         $this->validate($request, [
             'namamapel' => 'required',
-            'guru' => 'required',
+            'id_guru' => 'required',
            
         ]);
 
             $mapel->namamapel = $request->input('namamapel');
-            $mapel->guru = $request->input('guru');
+            $mapel->id_guru = $request->input('id_guru');
 
             $mapel->save();
             return redirect("/mapel");

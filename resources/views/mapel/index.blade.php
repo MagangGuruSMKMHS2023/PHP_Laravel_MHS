@@ -27,7 +27,7 @@
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
                     <td class="p-4"><?php echo $gr['id_mapel']; ?></td>
                     <td class="p-4"><?php echo $gr['namamapel']; ?></td>
-                    <td class="p-4"><?php echo $gr['guru']; ?></td>
+                    <td class="p-4"><?php echo $gr['namaguru']; ?></td>
 
                     <td class="p-4">
                         <a href="/mapel/<?= $gr['id_mapel'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
