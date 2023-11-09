@@ -19,10 +19,10 @@
     </div>
     <div class="md:w-2/3">
     <select class="bg-gray-200 border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
-       name="nama_siswa" required>
+       name="id_siswa" required>
        <?php foreach ($siswa as $row) : 
        ?>
-        <option value="<?= $row['namasiswa'] ?>" <?php if($nilai->nama_siswa ==  $row['namasiswa'] ) echo 'selected = "selected"';?>><b><?= $row['namasiswa'] ?></b></option>
+        <option value="<?= $row['id_siswa'] ?>" <?php if($nilai->id_siswa ==  $row['id_siswa'] ) echo 'selected = "selected"';?>><b><?= $row['namasiswa'] ?></b></option>
 
         <?php endforeach; ?>
       </select>

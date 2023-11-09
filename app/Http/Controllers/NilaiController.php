@@ -25,7 +25,10 @@ class NilaiController extends Controller
     public function index()
     {
         //
-        $nilai = $this->nilai->all();
+        $nilai = Nilai::join('siswa', 'nilai.id_siswa', '=', 'siswa.id_siswa')
+        ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id_kelas')
+        ->select('nilai.*', 'siswa.*','kelas.*')
+        ->get();
         return view('nilai.index', compact('nilai'));
     }
 
@@ -39,8 +42,7 @@ class NilaiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama_siswa' => 'required',
-            'kelas' => 'required',
+            'id_siswa' => 'required',
             'tugas' => 'required',
             'kuis' => 'required',
             'uts' => 'required',
@@ -64,8 +66,7 @@ class NilaiController extends Controller
         }
 
         Nilai::create([
-            'nama_siswa' => $request->input('nama_siswa'),
-            'kelas' => $request->input('kelas'),
+            'id_siswa' => $request->input('id_siswa'),
             'tugas' => $request->input('tugas'),
             'kuis' => $request->input('kuis'),
             'uts' => $request->input('uts'),
@@ -92,8 +93,7 @@ class NilaiController extends Controller
         $nilai = Nilai::find($id);
 
         $this->validate($request, [
-            'nama_siswa' => 'required',
-            'kelas' => 'required',
+            'id_siswa' => 'required',
             'tugas' => 'required',
             'kuis' => 'required',
             'uts' => 'required',
@@ -116,8 +116,7 @@ class NilaiController extends Controller
                 $keterangan = 'F Butuh Belajar Kiat';
         }
 
-            $nilai->nama_siswa = $request->input('nama_siswa');
-            $nilai->kelas = $request->input('kelas');
+            $nilai->id_siswa = $request->input('id_siswa');
             $nilai->tugas = $request->input('tugas');
             $nilai->kuis = $request->input('kuis');
             $nilai->uts = $request->input('uts');

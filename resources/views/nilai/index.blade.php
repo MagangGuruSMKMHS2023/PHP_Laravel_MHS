@@ -32,8 +32,8 @@
                 <?php foreach($nilai as $gr) : ?>
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
                     <td class="p-4"><?php echo $gr['id_nilai']; ?></td>
-                    <td class="p-4"><?php echo $gr['nama_siswa']; ?></td>
-                    <td class="p-4"><?php echo $gr['kelas']; ?></td>
+                    <td class="p-4"><?php echo $gr['namasiswa']; ?></td>
+                    <td class="p-4"><?php echo $gr['namakelas']; ?></td>
                     <td class="p-4"><?php echo $gr['tugas']; ?></td>
                     <td class="p-4"><?php echo $gr['kuis']; ?></td>
                     <td class="p-4"><?php echo $gr['uts']; ?></td>

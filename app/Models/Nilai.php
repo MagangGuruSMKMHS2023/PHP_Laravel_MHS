@@ -12,8 +12,7 @@ class Nilai extends Model
     protected $table = "nilai";  // sesuai nama dengan nama table
     protected $fillable = [
         'id_nilai',
-        'nama_siswa',
-        'kelas',
+        'id_siswa',
         'tugas',
         'kuis',
         'uts',
