@@ -27,8 +27,8 @@
                 <?php foreach($jadwal as $gr) : ?>
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
                     <td class="p-4"><?php echo $gr['id_jadwal']; ?></td>
-                    <td class="p-4"><?php echo $gr['mapel']; ?></td>
-                    <td class="p-4"><?php echo $gr['kelas']; ?></td>
+                    <td class="p-4"><?php echo $gr['namamapel']; ?></td>
+                    <td class="p-4"><?php echo $gr['namakelas']; ?></td>
                     <td class="p-4"><?php echo $gr['jam']; ?></td>
 
 

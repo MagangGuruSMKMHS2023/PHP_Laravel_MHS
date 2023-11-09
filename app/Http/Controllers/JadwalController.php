@@ -26,7 +26,10 @@ class JadwalController extends Controller
     public function index()
     {
         //
-        $jadwal = $this->jadwal->all();
+        $jadwal = Jadwal::join('mapel', 'jadwal.mapel', '=', 'mapel.id_mapel')
+        ->join('kelas', 'jadwal.kelas', '=', 'kelas.id_kelas')
+        ->select('jadwal.*', 'mapel.*', 'kelas.*')
+        ->get();
         return view('jadwal.index', compact('jadwal'));
     }
 

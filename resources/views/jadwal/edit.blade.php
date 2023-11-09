@@ -22,7 +22,7 @@
        name="mapel" required>
        <?php foreach ($mapel as $row) : 
        ?>
-        <option value="<?= $row['namamapel'] ?>" <?php if($jadwal->mapel ==  $row['namamapel'] ) echo 'selected = "selected"';?>><b><?= $row['namamapel'] ?></b></option>
+        <option value="<?= $row['id_mapel'] ?>" <?php if($jadwal->mapel ==  $row['id_mapel'] ) echo 'selected = "selected"';?>><b><?= $row['namamapel'] ?></b></option>
 
         <?php endforeach; ?>
       </select>
@@ -39,7 +39,7 @@
        name="kelas" required>
        <?php foreach ($kelas as $row) : 
        ?>
-        <option value="<?= $row['namakelas'] ?>" <?php if($jadwal->kelas ==  $row['namakelas'] ) echo 'selected = "selected"';?>><b><?= $row['namakelas'] ?></b></option>
+        <option value="<?= $row['id_kelas'] ?>" <?php if($jadwal->kelas ==  $row['id_kelas'] ) echo 'selected = "selected"';?>><b><?= $row['namakelas'] ?></b></option>
 
         <?php endforeach; ?>
       </select>

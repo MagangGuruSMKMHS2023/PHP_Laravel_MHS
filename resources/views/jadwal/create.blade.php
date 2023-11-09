@@ -22,7 +22,7 @@
        name="mapel" required>
        <?php foreach ($mapel as $row) : 
        ?>
-        <option value="<?= $row['namamapel'] ?>"><b><?= $row['namamapel'] ?></b></option>
+        <option value="<?= $row['id_mapel'] ?>"><b><?= $row['namamapel'] ?></b></option>
 
         <?php endforeach; ?>
       </select>
@@ -39,7 +39,7 @@
        name="kelas" required>
        <?php foreach ($kelas as $row) : 
        ?>
-        <option value="<?= $row['namakelas'] ?>"><b><?= $row['namakelas'] ?></b></option>
+        <option value="<?= $row['id_kelas'] ?>"><b><?= $row['namakelas'] ?></b></option>
 
         <?php endforeach; ?>
       </select>
