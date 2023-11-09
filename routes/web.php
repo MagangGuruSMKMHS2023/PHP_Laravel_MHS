@@ -7,6 +7,8 @@ use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PengembanganController;
+
 
 
 
@@ -45,6 +47,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/mapel', [MapelController::class, "index"]);
     Route::get('/jadwal', [JadwalController::class, "index"]);
     Route::get('/user', [UserController::class, "index"]);
+    Route::get('/pengembangan', [PengembanganController::class, "index"]);
+
 
 
 
@@ -59,6 +63,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/mapel/create',[MapelController::class, "create"]);
     Route::get('/jadwal/create',[JadwalController::class, "create"]);
     Route::get('/user/create',[UserController::class, "create"]);
+    Route::get('/pengembangan/create',[PengembanganController::class, "create"]);
+
 
 
 
@@ -75,6 +81,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/mapel/store',[MapelController::class, "store"]);
     Route::post('/jadwal/store',[JadwalController::class, "store"]);
     Route::post('/user/store',[UserController::class, "store"]);
+    Route::post('/pengembangan/store',[PengembanganController::class, "store"]);
+
 
 
 
@@ -89,6 +97,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/mapel/{mapel}/edit/',[MapelController::class,"edit"]);
     Route::get('/jadwal/{jadwal}/edit/',[JadwalController::class,"edit"]);
     Route::get('/user/{user}/edit/',[UserController::class,"edit"]);
+    Route::get('/pengembangan/{pengembangan}/edit/',[PengembanganController::class,"edit"]);
+
 
 
 
@@ -104,6 +114,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::put('/mapel/{mapel}',[MapelController::class, "update"]);
     Route::put('/jadwal/{jadwal}',[JadwalController::class, "update"]);
     Route::put('/user/{user}',[UserController::class, "update"]);
+    Route::put('/pengembangan/{pengembangan}',[PengembanganController::class, "update"]);
+
 
 
 
@@ -120,6 +132,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('/mapel/{mapel}',[MapelController::class, "delete"]);
     Route::delete('/jadwal/{jadwal}',[JadwalController::class, "delete"]);
     Route::delete('/user/{user}',[UserController::class, "delete"]);
+    Route::delete('/pengembangan/{pengembangan}',[PengembanganController::class, "delete"]);
 
 
 

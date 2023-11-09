@@ -15,6 +15,8 @@
                        
                         <a href="/nilai" class="p-6  font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-200"> Nilai </a>
 
+                        <a href="/pengembangan" class="p-6  font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-200"> Pengembangan </a>
+                       
                         <a href="/user" class="p-6  font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-200"> User </a>
                        
                         <a href="/logout" class="p-6  font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-200"> Logout </a>
