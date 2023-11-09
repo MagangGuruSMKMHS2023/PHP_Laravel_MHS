@@ -22,7 +22,9 @@ class SiswaController extends Controller
     public function index()
     {
         
-        $siswa = $this->siswa->all();
+        $siswa = Siswa::join('kelas', 'siswa.id_kelas', '=', 'kelas.id_kelas')
+        ->select('siswa.*', 'kelas.*')
+        ->get();
         return view('siswa.index',compact('siswa'));
     }
 
@@ -32,7 +34,7 @@ class SiswaController extends Controller
             'namasiswa' => 'required',
             'alamat' => 'required',
             'jeniskelamin' => 'required',
-            'kelas' => 'required',
+            'id_kelas' => 'required',
 
         ]);
 
@@ -72,7 +74,7 @@ class SiswaController extends Controller
             'namasiswa' => 'required',
             'alamat' => 'required',
             'jeniskelamin' => 'required',
-            'kelas' => 'required',
+            'id_kelas' => 'required',
            
         ]);
 
@@ -80,7 +82,7 @@ class SiswaController extends Controller
             $siswa->namasiswa = $request->input('namasiswa');
             $siswa->alamat = $request->input('alamat');
             $siswa-> jeniskelamin = $request->input('jeniskelamin');
-            $siswa->kelas = $request->input('kelas');
+            $siswa->id_kelas = $request->input('id_kelas');
         
             $siswa->save();
             return redirect("/siswa"); 

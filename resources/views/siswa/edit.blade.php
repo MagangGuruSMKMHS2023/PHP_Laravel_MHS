@@ -8,7 +8,7 @@
     @include('navbar')
 
   <div class="mx-96 mt-8">
-<form class="w-full max-w-sm" method="post" action="/siswa/{{$siswa->id}}" enctype="multipart/form-data">
+<form class="w-full max-w-sm" method="post" action="/siswa/{{$siswa->id_siswa}}" enctype="multipart/form-data">
     @method("put")
     @csrf
   <div class="md:flex md:items-center mb-6">
@@ -58,10 +58,10 @@
     </div>
     <div class="md:w-2/3">
       <select class="bg-gray-200 border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text"
-       name="kelas" required>
+       name="id_kelas" required>
        <?php foreach ($kelas as $row) : 
        ?>
-        <option value="<?= $row['namakelas'] ?>" <?php if($siswa->kelas ==  $row['namakelas'] ) echo 'selected = "selected"';?>><b><?= $row['namakelas'] ?></b>-<?= $row['walikelas'] ?></option>
+        <option value="<?= $row['id_kelas'] ?>" <?php if($siswa->id_kelas ==  $row['id_kelas'] ) echo 'selected = "selected"';?>><?= $row['namakelas'] ?></option>
 
         <?php endforeach; ?>
       </select>

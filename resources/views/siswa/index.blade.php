@@ -38,14 +38,14 @@
                 </tr>
                 <?php foreach($siswa as $row) : ?>
                 <tr class="even:bg-slate-300 odd:bg-slate-100">
-                    <td class="p-4"><?= $row['id']; ?></td>
+                    <td class="p-4"><?= $row['id_siswa']; ?></td>
                     <td class="p-4"><?= $row['namasiswa']; ?></td>
                     <td class="p-4"><?= $row['alamat']; ?></td>
                     <td class="p-4"><?= $row['jeniskelamin']; ?></td>
-                    <td class="p-4"><?= $row['kelas']; ?></td>
+                    <td class="p-4"><?= $row['namakelas']; ?></td>
                     <td class="p-4">
-                        <a href="/siswa/<?= $row['id'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
-                        <form action="/siswa/<?= $row['id']?>" method="post">
+                        <a href="/siswa/<?= $row['id_siswa'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
+                        <form action="/siswa/<?= $row['id_siswa']?>" method="post">
                            @csrf 
                            @method("delete")
                             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-3" type="submit">

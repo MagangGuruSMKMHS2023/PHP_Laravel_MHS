@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Siswa extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_siswa';
     protected $table = "siswa";  
     protected $fillable = [
-        'id',
+        'id_siswa',
         'namasiswa',
         'alamat',
         'jeniskelamin',
-        'kelas',
+        'id_kelas',
     ];
 }
