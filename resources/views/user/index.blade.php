@@ -31,16 +31,22 @@
                     <td class="p-4"><?= $row['email']; ?></td>
          
                     <td class="p-4">
-                        <a href="/user/<?= $row['id'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
+                       
                        <?php 
                             if(Auth::user()->name == $row['name']){
                        ?>
-                       
-                       <?php }else{ ?> 
+                        <a href="/user/<?= $row['id'] ?>/edit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Edit</a>
                         <form action="/user/<?= $row['id']?>" method="post">
                            @csrf 
                            @method("delete")
                             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-3" type="submit">
+                                Delete
+                            </button>
+                        </form>
+                        <?php }else{ ?> 
+                            <a href="#" class="bg-gray hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-gray rounded  cursor-not-allowed" >Edit</a>
+                        <form action="#">
+                            <button class="bg-gray hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-gray rounded mt-3  cursor-not-allowed" type="submit">
                                 Delete
                             </button>
                         </form>

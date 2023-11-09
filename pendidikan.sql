@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2023 at 09:41 AM
+-- Generation Time: Nov 09, 2023 at 09:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -306,7 +306,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'Hendra Muswaraa', 'henmus@gmail.com', NULL, '$2y$10$wfoXN4TlN9/H.AxXkoe08uBd9DsfzsAppCgb7kLAzwClAZNC7eZym', NULL, NULL, '2023-11-08 01:31:56'),
-(4, '123', '123@mail.com', NULL, '$2y$12$1zdo5XKQwN0PfalNV/MOJOq/DSWbMJkmVuRXwJQ3Xy3pz1pXnyx9K', NULL, '2023-11-08 01:34:19', '2023-11-08 01:34:19');
+(5, 'user', 'pmb@mail.com', NULL, '$2y$12$aKEvkjrIkWrBKblYAZ3mvOQPHCcFOryfkPTLyHDz23ATf7TVzy5wS', NULL, '2023-11-09 01:51:44', '2023-11-09 01:51:44');
 
 --
 -- Indexes for dumped tables
@@ -482,7 +482,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
