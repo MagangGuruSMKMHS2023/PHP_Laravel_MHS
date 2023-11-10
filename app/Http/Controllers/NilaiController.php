@@ -26,11 +26,13 @@ class NilaiController extends Controller
     public function index()
     {
         //
+        $kelas = $this->kelas->all();
+
         $nilai = Nilai::join('siswa', 'nilai.id_siswa', '=', 'siswa.id_siswa')
         ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id_kelas')
         ->select('nilai.*', 'siswa.*','kelas.*')
         ->get();
-        return view('nilai.index', compact('nilai'));
+        return view('nilai.index', compact('nilai','kelas'));
     }
 
     public function create()
@@ -139,18 +141,25 @@ class NilaiController extends Controller
     
     public function pdf(Request $request)
     {
-        $filename = 'NilaiSiswa.pdf';
+       
+        $carikelas = $request->input('kelas');
+        $filename = 'Nilai Siswa '. $carikelas .' .pdf';
 
         $nilai = Nilai::join('siswa', 'nilai.id_siswa', '=', 'siswa.id_siswa')
         ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id_kelas')
         ->select('nilai.*', 'siswa.*','kelas.*')
+        ->where('kelas.namakelas','=', $carikelas)
+        ->get();
+
+        $kelas = Kelas::where('namakelas','=',$carikelas)
+        ->limit(1)
         ->get();
   
-        $html = view()->make('nilaisiswa', compact('nilai'))->render();
+        $html = view()->make('nilaisiswa', compact('nilai','kelas'))->render();
   
         $pdf = new TCPDF;
           
-        $pdf::SetTitle('NilaiSiswa');
+        $pdf::SetTitle('NilaiSiswa '.$carikelas);
         $pdf::AddPage('L','A4');
         $pdf::writeHTML($html, true, false, true, false, '');
   
