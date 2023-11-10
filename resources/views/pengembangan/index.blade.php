@@ -9,12 +9,10 @@
 <body>
 @include('navbar')
 
+        <div class="flex">
+        <a href="/pengembangan/create" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48">Tambah</a>
 
-    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48">
-        <a href="/pengembangan/create">Tambah</a>
-    </button>
-
-    
+        </div>
 
     <div class="flex justify-center mt-4">
             <table class="table-auto border-collapse border border-slate-300 w-9/12">

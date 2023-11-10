@@ -36,6 +36,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', [LoginController::class, "index"]);
     Route::post('/login', [LoginController::class, "login"]);
     Route::get('/logout', [LoginController::class, "logout"]);
+    Route::get('/nilai/pdf', [NilaiController::class,"pdf"]);
 
 
 

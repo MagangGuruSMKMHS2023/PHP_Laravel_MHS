@@ -9,11 +9,9 @@
 <body>
 @include('navbar')
 
-
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48">
-                <a href="/siswa/create">Tambah</a>
-        </button>
-
+            <div class="flex">
+                <a href="/siswa/create" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48">Tambah</a>
+                </div>
         <form action="/carisiswa" method="get" class="mt-8">   
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none mx-48 ">

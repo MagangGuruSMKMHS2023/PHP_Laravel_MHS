@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Nilai;
+use Elibyy\TCPDF\Facades\TCPDF;
 
 class NilaiController extends Controller
 {
@@ -136,4 +137,25 @@ class NilaiController extends Controller
         
     }
     
+    public function pdf(Request $request)
+    {
+        $filename = 'NilaiSiswa.pdf';
+
+        $nilai = Nilai::join('siswa', 'nilai.id_siswa', '=', 'siswa.id_siswa')
+        ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id_kelas')
+        ->select('nilai.*', 'siswa.*','kelas.*')
+        ->get();
+  
+        $html = view()->make('nilaisiswa', compact('nilai'))->render();
+  
+        $pdf = new TCPDF;
+          
+        $pdf::SetTitle('NilaiSiswa');
+        $pdf::AddPage('L','A4');
+        $pdf::writeHTML($html, true, false, true, false, '');
+  
+        $pdf::Output(public_path($filename), 'F');
+  
+        return response()->download(public_path($filename));
+    }
 }

@@ -10,9 +10,9 @@
 @include('navbar')
 
 
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48">
-                <a href="/mapel/create">Tambah</a>
-        </button>
+                <div class="flex">
+                <a href="/mapel/create" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48">Tambah</a>
+                </div>
 
        
         <div class="flex justify-center mt-4">
