@@ -32,6 +32,10 @@
                       Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
                   </p> -->
               </form>
+              Pendaftaran Siswa Baru ?
+              <a href="/regis" class="inline-flex items-center text-blue-600 hover:underline">
+                    Klik Disini
+             </a>  
           </div>
       </div>
   </div>
