@@ -8,6 +8,8 @@ use App\Http\Controllers\MapelController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PengembanganController;
+use App\Http\Controllers\JurusanController;
+
 
 
 
@@ -33,7 +35,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', [LoginController::class, "landing"]);
+    Route::get('/', [JurusanController::class, "index"]);
     Route::get('/loginform', [LoginController::class, "index"]);
     Route::post('/login', [LoginController::class, "login"]);
     Route::get('/logout', [LoginController::class, "logout"]);
