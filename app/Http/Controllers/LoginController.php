@@ -19,6 +19,11 @@ class LoginController extends Controller
         $this->user = $user;
 
     }
+
+   public function landing()
+   {
+    return view('landing');
+   } 
    public function index()
    {
     return view('auth.login');

@@ -33,7 +33,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', [LoginController::class, "index"]);
+    Route::get('/', [LoginController::class, "landing"]);
+    Route::get('/loginform', [LoginController::class, "index"]);
     Route::post('/login', [LoginController::class, "login"]);
     Route::get('/logout', [LoginController::class, "logout"]);
     Route::get('/regis', [SiswaController::class, "regis"]);
