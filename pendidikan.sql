@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2023 at 10:16 AM
+-- Generation Time: Nov 16, 2023 at 08:57 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -48,6 +48,7 @@ CREATE TABLE `guru` (
   `namaguru` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `jeniskelamin` varchar(255) NOT NULL,
+  `gambar_guru` blob DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -56,10 +57,10 @@ CREATE TABLE `guru` (
 -- Dumping data for table `guru`
 --
 
-INSERT INTO `guru` (`id_guru`, `namaguru`, `alamat`, `jeniskelamin`, `updated_at`, `created_at`) VALUES
-(6, 'Hendra Muswara', 'Sarmen', 'Laki Laki', '2023-11-09 08:06:49', '2023-11-09 08:04:27'),
-(8, 'Reza NurPanther', 'Tg.uma', 'Laki Laki', '2023-11-10 06:41:52', '2023-11-10 06:41:52'),
-(9, 'Nico Tambunan', 'Tiban Baru', 'Laki Laki', '2023-11-13 03:35:23', '2023-11-13 03:35:23');
+INSERT INTO `guru` (`id_guru`, `namaguru`, `alamat`, `jeniskelamin`, `gambar_guru`, `updated_at`, `created_at`) VALUES
+(6, 'Hendra Muswara', 'Sarmen', 'Laki Laki', 0x313730303132303539342e706e67, '2023-11-16 07:43:14', '2023-11-09 08:04:27'),
+(8, 'Reza NurPanther', 'Tg.uma', 'Laki Laki', 0x313730303132303630332e706e67, '2023-11-16 07:43:23', '2023-11-10 06:41:52'),
+(9, 'Nico Tambunan', 'Tiban Baru', 'Laki Laki', 0x313730303132303631312e706e67, '2023-11-16 07:43:31', '2023-11-13 03:35:23');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,7 @@ CREATE TABLE `kelas` (
 INSERT INTO `kelas` (`id_kelas`, `namakelas`, `id_guru`, `kursi`, `meja`, `gambar_kelas`, `updated_at`, `created_at`) VALUES
 (16, 'XI PPLG 2', 6, 15, 15, 0x313639393531373439312e706e67, '2023-11-09 08:11:31', '2023-11-09 08:11:31'),
 (17, 'XI TJKT 2', 8, 15, 15, 0x313639393539383536382e6a7067, '2023-11-10 06:42:48', '2023-11-10 06:42:48'),
-(18, 'XII TKJT 1', 9, 28, 28, 0x313639393834363534372e706e67, '2023-11-13 03:35:47', '2023-11-13 03:35:47');
+(18, 'XII TJKT 1', 6, 28, 28, 0x313639393834363534372e706e67, '2023-11-15 09:32:27', '2023-11-13 03:35:47');
 
 -- --------------------------------------------------------
 
@@ -291,6 +292,7 @@ CREATE TABLE `siswa` (
   `alamat` varchar(255) NOT NULL,
   `jeniskelamin` varchar(255) NOT NULL,
   `id_kelas` int(11) NOT NULL,
+  `gambar_siswa` blob DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -299,12 +301,13 @@ CREATE TABLE `siswa` (
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `namasiswa`, `alamat`, `jeniskelamin`, `id_kelas`, `updated_at`, `created_at`) VALUES
-(5, 'Dini Aminarty', 'sengkuang', 'Perempuan', 16, '2023-11-09 08:21:38', '2023-11-09 08:21:38'),
-(6, 'Salman Syamsudin', 'Seraya', 'Laki Laki', 17, '2023-11-10 06:43:14', '2023-11-10 06:43:14'),
-(7, 'Hendro', 'Batu Aji', 'Laki Laki', 17, '2023-11-13 02:38:36', '2023-11-13 02:38:36'),
-(8, 'Karta', 'sengkuang', 'Laki Laki', 18, '2023-11-13 03:36:00', '2023-11-13 03:33:47'),
-(9, 'Divo', 'Sadai', 'Laki Laki', 18, '2023-11-13 15:57:27', '2023-11-13 15:57:27');
+INSERT INTO `siswa` (`id_siswa`, `namasiswa`, `alamat`, `jeniskelamin`, `id_kelas`, `gambar_siswa`, `updated_at`, `created_at`) VALUES
+(5, 'Dini Aminarty', 'sengkuang', 'Perempuan', 16, 0x313730303131383539372e6a7067, '2023-11-16 07:09:57', '2023-11-09 08:21:38'),
+(6, 'Salman Syamsudin', 'Seraya', 'Laki Laki', 17, 0x313730303131383632372e6a7067, '2023-11-16 07:10:27', '2023-11-10 06:43:14'),
+(7, 'Hendro', 'Batu Aji', 'Laki Laki', 17, 0x313730303131383635342e6a7067, '2023-11-16 07:10:54', '2023-11-13 02:38:36'),
+(8, 'Karta', 'sengkuang', 'Laki Laki', 18, 0x313730303131383639342e706e67, '2023-11-16 07:11:34', '2023-11-13 03:33:47'),
+(9, 'Divo', 'Sadai', 'Laki Laki', 18, 0x313730303131383731332e706e67, '2023-11-16 07:11:53', '2023-11-13 15:57:27'),
+(10, 'Rashed', 'Villa Mas', 'Laki Laki', 18, 0x313730303131383738322e6a7067, '2023-11-16 07:13:02', '2023-11-16 07:13:02');
 
 -- --------------------------------------------------------
 
@@ -342,7 +345,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Hendra Muswaraa', 'henmus@gmail.com', NULL, '$2y$10$wfoXN4TlN9/H.AxXkoe08uBd9DsfzsAppCgb7kLAzwClAZNC7eZym', NULL, NULL, '2023-11-08 01:31:56'),
+(2, 'Hendra Muswara', 'henmus@gmail.com', NULL, '$2y$10$wfoXN4TlN9/H.AxXkoe08uBd9DsfzsAppCgb7kLAzwClAZNC7eZym', NULL, NULL, '2023-11-16 00:12:07'),
 (5, 'user', 'pmb@mail.com', NULL, '$2y$12$aKEvkjrIkWrBKblYAZ3mvOQPHCcFOryfkPTLyHDz23ATf7TVzy5wS', NULL, '2023-11-09 01:51:44', '2023-11-09 01:51:44');
 
 --
@@ -465,7 +468,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `jadwal`
@@ -519,7 +522,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`
