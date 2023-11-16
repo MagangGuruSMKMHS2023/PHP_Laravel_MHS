@@ -9,7 +9,7 @@
     <!-- navigasi -->
     <nav class="flex flex-wrap fixed z-50 w-full items-center justify-between p-4 bg-gray-700">
         <div class="w-auto lg:order-2 lg:w-1/5 lg:text-center">
-            <a class="text-xl font-semibold text-gray-300 font-heading" href="#">
+            <a class="text-2xl font-semibold text-gray-300 font-heading" href="#">
                 Multistudi High School
             </a>
         </div>
@@ -83,7 +83,7 @@
 
     <!-- visi -->
     <section class="bg-gray-700" id="visi">
-        <div class="container-fluid p-4 mx-auto bg-gray-700 max-w-7xl sm:p-6 lg:p-8 dark:bg-gray-800 mt-16">
+        <div class="container-fluid p-4 mx-auto bg-gray-700 max-w-7xl sm:p-6 lg:p-8 dark:bg-gray-800 lg:mt-15 xl:mt-15 md:mt-8 sm:mt-3">
             <div class="flex flex-wrap -mx-8">
                 <div class="w-full px-8 lg:w-1/2">
                     <div class="pb-12 mb-12 border-b lg:mb-0 lg:pb-0 lg:border-b-0">
