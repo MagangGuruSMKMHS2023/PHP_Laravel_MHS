@@ -15,5 +15,9 @@ class Guru extends Model
         'namaguru',
         'alamat',
         'jeniskelamin',
+        'gambar_guru',
+        'updated_at',
+        'created_at',
+
     ];
 }

@@ -16,5 +16,6 @@ class Siswa extends Model
         'alamat',
         'jeniskelamin',
         'id_kelas',
+        'gambar_siswa',
     ];
 }

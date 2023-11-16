@@ -37,10 +37,22 @@ class SiswaController extends Controller
             'alamat' => 'required',
             'jeniskelamin' => 'required',
             'id_kelas' => 'required',
+            'gambar_siswa' => 'required|image|mimes:jpeg,png,jpg'
 
         ]);
+        $gambar_siswa = $request->file('gambar_siswa');
+        $gambar_siswa_name = time(). '.' . $gambar_siswa->getClientOriginalExtension();
+        $gambar_siswa->move(public_path('upload_gambar'), $gambar_siswa_name);
 
-        $this->siswa->create($request->all());
+        // $this->siswa->create($request->all());
+        Siswa::create([
+            'namasiswa' => $request->input('namasiswa'),
+            'alamat' => $request->input('alamat'),
+            'jeniskelamin' => $request->input('jeniskelamin'),
+            'id_kelas' => $request->input('id_kelas'),
+            'gambar_siswa' => $gambar_siswa_name
+
+        ]);
         return redirect('/siswa')->with('success', 'Data kelas berhasil disimpan');
 
     }
@@ -104,8 +116,16 @@ class SiswaController extends Controller
             'alamat' => 'required',
             'jeniskelamin' => 'required',
             'id_kelas' => 'required',
+            'gambar_siswa' => 'image|mimes:jpeg,png,jpg'
            
         ]);
+
+        if($request->hasFile('gambar_siswa')){
+            $gambar_siswa = $request->file('gambar_siswa');
+            $gambar_siswa_name = time(). '.' . $gambar_siswa->getClientOriginalExtension();
+            $gambar_siswa->move(public_path('upload_gambar'), $gambar_siswa_name); 
+            $siswa->gambar_siswa = $gambar_siswa_name;
+        }
 
        
             $siswa->namasiswa = $request->input('namasiswa');
