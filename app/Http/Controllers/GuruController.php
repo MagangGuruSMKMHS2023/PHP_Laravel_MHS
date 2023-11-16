@@ -34,9 +34,21 @@ class GuruController extends Controller
             'namaguru' => 'required',
             'alamat' => 'required',
             'jeniskelamin' => 'required',
-        ]);
+            'gambar_guru' => 'required|image|mimes:jpeg,png,jpg'
 
-        $this->guru->create($request->all());
+        ]);
+        $gambar_guru = $request->file('gambar_guru');
+        $gambar_guru_name = time(). '.' . $gambar_guru->getClientOriginalExtension();
+        $gambar_guru->move(public_path('upload_gambar'), $gambar_guru_name);
+
+        // $this->guru->create($request->all());
+
+        Guru::create([
+            'namaguru' => $request->input('namaguru'),
+            'alamat' => $request->input('alamat'),
+            'jeniskelamin' => $request->input('jeniskelamin'),
+            'gambar_guru' => $gambar_guru_name
+        ]);
         return redirect('/guru')->with('success', 'Data Guru berhasil disimpan');
 
     }
@@ -62,8 +74,15 @@ class GuruController extends Controller
             'namaguru' => 'required',
             'alamat' => 'required',
             'jeniskelamin' => 'required',
-           
+            'gambar_png' => 'image|mimes:jpeg,png,jpg'
         ]);
+
+        if($request->hasFile('gambar_guru')){
+            $gambar_guru = $request->file('gambar_guru');
+            $gambar_guru_name = time(). '.' . $gambar_guru->getClientOriginalExtension();
+            $gambar_guru->move(public_path('upload_gambar'), $gambar_guru_name); 
+            $guru->gambar_guru = $gambar_guru_name;
+        }
 
        
             $guru->namaguru = $request->input('namaguru');

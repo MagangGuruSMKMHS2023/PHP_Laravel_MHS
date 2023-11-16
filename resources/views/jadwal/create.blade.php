@@ -7,7 +7,7 @@
 <body>
     @include('navbar')
 
-  <div class="mx-96 mt-8">
+  <div class="mx-96 pt-24">
 <form class="w-full max-w-sm" method="post" action="/jadwal/store" enctype="multipart/form-data">
     @csrf
    
