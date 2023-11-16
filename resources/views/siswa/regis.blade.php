@@ -49,6 +49,9 @@
                       Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
                   </p> -->
               </form>
+              <a href="/" class="inline-flex items-center text-blue-600 hover:underline">
+                    Kembali
+             </a> 
           </div>
       </div>
   </div>
