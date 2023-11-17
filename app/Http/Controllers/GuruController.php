@@ -109,4 +109,13 @@ class GuruController extends Controller
                         ->get();
        return view('guru.index', compact('guru'));                 
     }
+
+
+    public function gurumhs()
+    {
+        //
+        $guru = $this->guru->all();
+        return view('gurumhs',compact('guru'));
+    }
+
 }

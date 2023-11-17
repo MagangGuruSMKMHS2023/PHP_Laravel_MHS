@@ -28,8 +28,8 @@
             <a class="block mt-4 mr-10 text-white lg:inline-block lg:mt-0 hover:text-indigo-600" href="#hero">
                 Beranda
             </a>
-            <a class="block mt-4 mr-10 text-white lg:inline-block lg:mt-0 hover:text-indigo-600" href="#visi">
-                Visi
+            <a class="block mt-4 mr-10 text-white lg:inline-block lg:mt-0 hover:text-indigo-600" href="/gurumhs">
+                Guru
             </a>
         </div>
         <div class="hidden w-full navbar-menu lg:order-3 lg:block lg:w-2/5 lg:text-right">

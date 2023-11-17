@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['middleware' => ['web']], function () {
+    //public view
     Route::get('/', [JurusanController::class, "index"]);
     Route::get('/loginform', [LoginController::class, "index"]);
     Route::post('/login', [LoginController::class, "login"]);
@@ -42,7 +43,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/regis', [SiswaController::class, "regis"]);
     Route::get('/show', [SiswaController::class, "show"]);
     Route::post('/registrasi',[SiswaController::class, "registrasi"]);
+    Route::get('/gurumhs', [GuruController::class, "gurumhs"]);
 
+
+
+    //pdf
     Route::get('/siswa/pdf', [SiswaController::class,"pdf"]);
     Route::get('/nilai/pdf', [NilaiController::class,"pdf"]);
 
